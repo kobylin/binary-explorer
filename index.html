@@ -1,0 +1,83 @@
+<html ng-app="binaryExplorer">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Binary Explorer</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"
+    type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="binaryConvertions">
+    <div class="content">
+        <div class="table-responsive">
+            <table class="table table-condensed table-hover numbers-table">
+                <thead>
+                    <tr class="active">
+                        <th>#</th>
+                        <th>Decimal</th>
+                        <th>Binary</th>
+                        <th>Hex</th>
+                        <th></th>
+                    </tr>
+                    <tr class="info">
+                        <td>SUM</td>
+                        <td>{{getNumbersSum()}}</td>
+                        <td class="binary-field">{{getNumbersSum() | binary}}</td>
+                        <td >{{getNumbersSum() | hex}}</td>
+                        <th></th>
+                    </tr>
+                    <tr class="info">
+                        <td>&(AND)</td>
+                        <td>{{getNumbersAnd()}}</td>
+                        <td class="binary-field">{{getNumbersAnd() | binary}}</td>
+                        <td >{{getNumbersAnd() | hex}}</td>
+                        <th></th>
+                    </tr>
+                    <tr class="info">
+                        <td>|(OR)</td>
+                        <td>{{getNumbersOr()}}</td>
+                        <td class="binary-field">{{getNumbersOr() | binary}}</td>
+                        <td >{{getNumbersOr() | hex}}</td>
+                        <th></th>
+                    </tr>
+                    <tr class="info">
+                        <td>^(XOR)</td>
+                        <td>{{getNumbersXor()}}</td>
+                        <td class="binary-field">{{getNumbersXor() | binary}}</td>
+                        <td >{{getNumbersXor() | hex}}</td>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                    <tr ng-repeat="number in numbers" number-set="number">
+                        <td>
+                            {{$index + 1}}
+                        </td>
+                        <td>
+                            <input type="text" is-number="number.dec" ng-model="number.dec" />
+                        </td>
+                        <td>
+                            <input type="text" class="binary-field" ng-model="number.bin" />
+                        </td>
+                        <td>
+                            <input type="text" ng-model="number.hex" />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm" ng-click="remove(number)">x</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            <button type="button" class="btn btn-primary" ng-click="addNumber()">Add</button>
+        </div>
+    </div>
+</body>
+
+</html>

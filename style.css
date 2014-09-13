@@ -1,0 +1,16 @@
+.binary-field {
+    text-align: right;
+}
+td.binary-field {
+    padding-right: 7px !important;
+}
+
+.numbers-table input[type="text"] {
+    width: 100%;
+}
+
+.content {
+    width: 950px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
