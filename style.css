@@ -4,13 +4,20 @@
 td.binary-field {
     padding-right: 7px !important;
 }
-
 .numbers-table input[type="text"] {
     width: 100%;
 }
-
 .content {
     width: 950px;
     margin: 0 auto;
     margin-top: 50px;
+}
+.binary-operations a {
+    margin-right: 10px;
+}
+.binary-operations a:last-child {
+    margin-right: 0px;
+}
+.binary-cell {
+    width: 355px;
 }

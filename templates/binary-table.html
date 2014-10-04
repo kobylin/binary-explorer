@@ -1,0 +1,63 @@
+<table class="table table-condensed table-hover numbers-table">
+    <thead>
+        <tr class="active">
+            <th>#</th>
+            <th>Decimal</th>
+            <th>Binary</th>
+            <th>Hex</th>
+            <th></th>
+        </tr>
+        <tr class="info" ng-init="sum = getNumbersSum()">
+            <td>SUM</td>
+            <td>{{sum}}</td>
+            <td class="binary-field">{{sum | binary}}</td>
+            <td>{{sum | hex}}</td>
+            <th></th>
+        </tr>
+        <tr class="info">
+            <td>&(AND)</td>
+            <td>{{getNumbersAnd()}}</td>
+            <td class="binary-field">{{getNumbersAnd() | binary}}</td>
+            <td>{{getNumbersAnd() | hex}}</td>
+            <th></th>
+        </tr>
+        <tr class="info">
+            <td>|(OR)</td>
+            <td>{{getNumbersOr()}}</td>
+            <td class="binary-field">{{getNumbersOr() | binary}}</td>
+            <td>{{getNumbersOr() | hex}}</td>
+            <th></th>
+        </tr>
+        <tr class="info">
+            <td>^(XOR)</td>
+            <td>{{getNumbersXor()}}</td>
+            <td class="binary-field">{{getNumbersXor() | binary}}</td>
+            <td>{{getNumbersXor() | hex}}</td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr></tr>
+        <tr ng-repeat="number in numbers" number-set="number">
+            <td>
+                {{$index + 1}}
+            </td>
+            <td>
+                <input type="text" is-number="number.dec" ng-model="number.dec" />
+            </td>
+            <td class="binary-cell">
+                <input type="text" class="binary-field" ng-model="number.bin" operations-popover="number.bin"
+                />
+            </td>
+            <td>
+                <input type="text" ng-model="number.hex" />
+            </td>
+            <td>
+                <button type="button" ng-show="$index != 0" class="btn btn-danger btn-sm" ng-click="remove(number)">x</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <button type="button" class="btn btn-primary" ng-click="addNumber()">Add</button>
+    </tfoot>
+</table>

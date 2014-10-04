@@ -1,0 +1,9 @@
+- make is number not take argument but validate input
+- rename numberSet. Define more clear what it does: link set of values together. No templating.
+- show bin size
+- restrict input
+- Log Max allowed int
+- Log remained amount to max
+- handle overflow
+- make confortable bin input
+- attach binary operations
