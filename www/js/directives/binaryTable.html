@@ -38,16 +38,15 @@
     </thead>
     <tbody>
         <tr></tr>
-        <tr ng-repeat="number in numbers" number-set="number">
+        <tr ng-repeat="number in numbers" multi-number="number">
             <td>
                 {{$index + 1}}
             </td>
             <td>
-                <input type="text" is-number="number.dec" ng-model="number.dec" />
+                <input type="text" ng-model="number.dec" is-number />
             </td>
             <td class="binary-cell">
-                <input type="text" class="binary-field" ng-model="number.bin" operations-popover="number.bin"
-                />
+                <input type="text" ng-model="number.bin" operations-popover="number.bin" class="binary-field" />
             </td>
             <td>
                 <input type="text" ng-model="number.hex" />
@@ -58,6 +57,10 @@
         </tr>
     </tbody>
     <tfoot>
-        <button type="button" class="btn btn-primary" ng-click="addNumber()">Add</button>
+        <tr>
+            <td colspan="4">
+                <button type="button" class="btn btn-primary" ng-click="addNumber()">Add</button>
+            </td>
+        </tr>
     </tfoot>
 </table>
