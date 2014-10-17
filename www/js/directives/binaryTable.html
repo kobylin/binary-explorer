@@ -38,12 +38,12 @@
     </thead>
     <tbody>
         <tr></tr>
-        <tr ng-repeat="number in numbers" multi-number="number">
+        <tr ng-repeat="number in numbers" multi-number-t="number">
             <td>
                 {{$index + 1}}
             </td>
             <td>
-                <input type="text" ng-model="number.dec" is-number />
+                <input type="text" ng-model="number.dec" is-int32 />
             </td>
             <td class="binary-cell">
                 <input type="text" ng-model="number.bin" operations-popover="number.bin" class="binary-field" />

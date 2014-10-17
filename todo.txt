@@ -2,6 +2,7 @@
 + rename numberSet. Define more clear what it does: link set of values together. No templating.
 + make is number not take argument but validate input
 - restrict input
+    - read about ngModel controller. figure out lifycecle
     - make bin, int, hex validations
 - show bin size
 - show Max allowed int
