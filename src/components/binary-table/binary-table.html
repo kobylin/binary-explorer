@@ -15,21 +15,21 @@
             <th></th>
         </tr>
         <tr class="info">
-            <td>&(AND)</td>
+            <td>AND</td>
             <td>{{getNumbersAnd()}}</td>
             <td class="binary-field">{{getNumbersAnd() | binary}}</td>
             <td>{{getNumbersAnd() | hex}}</td>
             <th></th>
         </tr>
         <tr class="info">
-            <td>|(OR)</td>
+            <td>OR</td>
             <td>{{getNumbersOr()}}</td>
             <td class="binary-field">{{getNumbersOr() | binary}}</td>
             <td>{{getNumbersOr() | hex}}</td>
             <th></th>
         </tr>
         <tr class="info">
-            <td>^(XOR)</td>
+            <td>XOR</td>
             <td>{{getNumbersXor()}}</td>
             <td class="binary-field">{{getNumbersXor() | binary}}</td>
             <td>{{getNumbersXor() | hex}}</td>
@@ -38,7 +38,7 @@
     </thead>
     <tbody>
         <tr></tr>
-        <tr ng-repeat="number in numbers" multi-number-t="number">
+        <tr ng-repeat="number in numbers" multi-number="number">
             <td>
                 {{$index + 1}}
             </td>

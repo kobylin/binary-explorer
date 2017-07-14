@@ -1,23 +1,49 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var debug = require('gulp-debug');
+var concat = require('gulp-concat');
 
-gulp.task('server', function() {
+gulp.task('server', function () {
     connect.server({
-        root: ['www'],
+        root: ['bin'],
         port: 4242,
         livereload: true
     })
 });
 
-gulp.task('project_files', function () {
+gulp.task('reload', function () {
+    gulp.src(['./bin/**/*'])
+        .pipe(connect.reload());
+});
+
+gulp.task('js', function () {
     gulp.src([
-        './www/**/*'
-    ]).pipe(connect.reload());
+        './src/app.js',
+        './src/**/*.js',
+        '!./src/bower_components/**/*.js'])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('./bin'));
+});
+
+gulp.task('lib', function () {
+    gulp.src([
+        './src/bower_components/**/*'], {base: './src'})
+        .pipe(gulp.dest('./bin'));
+});
+
+gulp.task('html', function () {
+    gulp.src(['./src/**/*.html'], {base: './src'})
+        .pipe(gulp.dest('./bin'));
+});
+
+gulp.task('css', function () {
+    gulp.src(['./src/css/**/*'], {base: './src'})
+        .pipe(gulp.dest('./bin'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./www/**/*'], ['project_files'])
+    gulp.watch(['./src/**/*', '!./src/bower_components/**/*.js'], ['build_dynamic', 'reload'])
 });
 
-gulp.task('default', ['server', 'watch']);
+gulp.task('build_dynamic', ['js', 'html', 'css']);
+gulp.task('default', ['lib', 'build_dynamic', 'server', 'watch']);

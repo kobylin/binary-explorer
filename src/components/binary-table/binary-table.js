@@ -1,7 +1,7 @@
 app.directive('binaryTable', function () {
     return {
         restrict: 'E',
-        templateUrl: 'js/directives/binary-table.html',
+        templateUrl: 'components/binary-table/binary-table.html',
         scope: {},
         controller: function ($scope) {
             console.log('controller', $scope);

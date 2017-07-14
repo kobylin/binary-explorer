@@ -1,5 +1,6 @@
 *.swp
 node_modules/
-www/bower_components
+src/bower_components
 package-lock.json
 .idea
+bin/
