@@ -1,0 +1,17 @@
+{
+  "name": "binary-explorer",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Andrew Kobylin <andrii.kobylin@gettyimages.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kobylin/binary-explorer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

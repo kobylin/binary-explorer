@@ -4,6 +4,10 @@
   "description": "",
   "dependencies": {
     "gulp": "^3.5.6",
-    "gulp-connect": "*"
+    "gulp-connect": "*",
+    "gulp-debug": "^3.1.0"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }

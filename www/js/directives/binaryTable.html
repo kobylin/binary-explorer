@@ -7,11 +7,11 @@
             <th>Hex</th>
             <th></th>
         </tr>
-        <tr class="info" ng-init="sum = getNumbersSum()">
+        <tr class="info">
             <td>SUM</td>
-            <td>{{sum}}</td>
-            <td class="binary-field">{{sum | binary}}</td>
-            <td>{{sum | hex}}</td>
+            <td>{{getNumbersSum()}}</td>
+            <td class="binary-field">{{getNumbersSum() | binary}}</td>
+            <td>{{getNumbersSum() | hex}}</td>
             <th></th>
         </tr>
         <tr class="info">
@@ -46,7 +46,8 @@
                 <input type="text" ng-model="number.dec" is-int32 />
             </td>
             <td class="binary-cell">
-                <input type="text" ng-model="number.bin" operations-popover="number.bin" class="binary-field" />
+                <!--<input type="text" ng-model="number.bin" operations-popover="number.bin" class="binary-field" />-->
+                <input type="text" ng-model="number.bin" class="binary-field" />
             </td>
             <td>
                 <input type="text" ng-model="number.hex" />

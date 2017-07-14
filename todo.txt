@@ -1,12 +1,6 @@
-+ make gulp hosting server
-+ rename numberSet. Define more clear what it does: link set of values together. No templating.
-+ make is number not take argument but validate input
 - restrict input
-    - read about ngModel controller. figure out lifycecle
-    - make bin, int, hex validations
+    - make bin, int, hex validations: numbers, letters, max value
 - show bin size
 - show Max allowed int
-- log remained amount to max
-- handle overflow
-- make confortable bin input
 - attach binary operations
+- make fancy table

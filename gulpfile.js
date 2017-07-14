@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
-
+var debug = require('gulp-debug');
 
 gulp.task('server', function() {
     connect.server({
@@ -9,3 +9,15 @@ gulp.task('server', function() {
         livereload: true
     })
 });
+
+gulp.task('project_files', function () {
+    gulp.src([
+        './www/**/*'
+    ]).pipe(connect.reload());
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['./www/**/*'], ['project_files'])
+});
+
+gulp.task('default', ['server', 'watch']);
