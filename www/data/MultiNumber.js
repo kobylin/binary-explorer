@@ -41,8 +41,8 @@ MultiNumber.prototype.isDec = function(num) {
 
 MultiNumber.prototype.isBin = function(num) {
     return /^[0-1]+$/.test(num);
-}
+};
 
 MultiNumber.prototype.isHex = function(num) {
     return /^(0x)?[0-9a-f]+$/i.test(num);
-}
+};

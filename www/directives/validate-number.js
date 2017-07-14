@@ -1,12 +1,10 @@
-var binaryExplorer = angular.module('binaryExplorer');
-
 var REGEXP = {
     int32: /^(-)?[0-9]+$/,
     bin: /^[0-1]+$/,
     hex: /^(0x)?[0-9a-f]+$/i
 };
 
-binaryExplorer.directive('isInt32', function() {
+app.directive('isInt32', function() {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -33,7 +31,7 @@ binaryExplorer.directive('isInt32', function() {
     };
 });
 
-binaryExplorer.directive('isBin32', function() {
+app.directive('isBin32', function() {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -58,7 +56,7 @@ binaryExplorer.directive('isBin32', function() {
     };
 });
 
-binaryExplorer.directive('isHex32', function() {
+app.directive('isHex32', function() {
     return {
         restrict: 'A',
         require: 'ngModel',
