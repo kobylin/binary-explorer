@@ -26,12 +26,15 @@ var utils = {
             throw 'Too big number for this base system(' + base + ' base)';
         }
 
-        if (intVal >= 0)
+        if (intVal >= 0) {
+            // return intVal.toString(2);
             return utils.padleft(intVal.toString(2), base, "0");
-        // else
+        }
+
         var tmp = (-intVal - 1).toString(2).replace(/[01]/g, function (d) {
             return +!+d; // hehe: inverts each char
         });
+
         return utils.padleft(tmp, base, "1");
     },
 
@@ -45,5 +48,19 @@ var utils = {
             });
             return -(parseInt(tmp, 2) + 1);
         }
+    },
+
+    clamp: function (val, min, max) {
+      if(min <= val && val <= max) {
+          return val;
+      }
+
+      if(val <= min) {
+          return min;
+      }
+
+      if(val >= max) {
+          return max;
+      }
     }
 };

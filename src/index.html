@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-    <title>Binary Explorer</title>
+    <title>Numbers Explorer</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 
@@ -14,9 +14,16 @@
 </head>
 
 <body>
+<input type="text" name="" id="aaa">
+<script>
+    aaa.onkeydown = function (e) {
+        console.log(aaa.value);
+        return false;
+    };
+</script>
 <div class="content">
     <div class="table-responsive">
-        <binary-table></binary-table>
+        <numbers-table></numbers-table>
     </div>
 </div>
 </body>

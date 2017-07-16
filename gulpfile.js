@@ -42,8 +42,8 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./src/**/*', '!./src/bower_components/**/*.js'], ['build_dynamic', 'reload'])
+    gulp.watch(['./src/**/*', './src/bower_components/**/*.js'], ['build_dynamic', 'reload'])
 });
 
-gulp.task('build_dynamic', ['js', 'html', 'css']);
+gulp.task('build_dynamic', ['js', 'html', 'css', 'lib']);
 gulp.task('default', ['lib', 'build_dynamic', 'server', 'watch']);

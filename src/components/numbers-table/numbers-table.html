@@ -1,0 +1,69 @@
+<div class="numbers-table">
+    <table class="numbers-table__table table table-condensed table-hover">
+        <tr class="active">
+            <th>#</th>
+            <th>Binary</th>
+            <th>Decimal</th>
+            <th>Hex</th>
+            <th></th>
+        </tr>
+        <tr class="numbers-table__number-row" ng-repeat="number in numbers">
+            <td>
+                {{$index + 1}}
+            </td>
+            <td class="binary-cell">
+                <!--<input type="text" ng-model="number.bin" operations-popover="number.bin" class="binary-field" />-->
+                <input class="numbers-table__input numbers-table__input_binary" type="text" ng-model="number.bin"/>
+            </td>
+            <td>
+                <input class="numbers-table__input" type="text" ng-model="number.dec" is-int32
+                       ng-model-options="{updateOn: 'keydown'}"/>
+                {{number.dec}}
+            </td>
+            <td>
+                <input class="numbers-table__input" type="text" ng-model="number.hex"/>
+            </td>
+            <td class="numbers-table__button_cell">
+                <button type="button" ng-show="$index != 0" class="btn btn-danger btn-sm" ng-click="remove(number)">x
+                </button>
+            </td>
+        </tr>
+        <tr class="numbers-table__summary-row info">
+            <td>SUM</td>
+            <td class="numbers-table__summary-number">{{getNumbersSum() | binary}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersSum()}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersSum() | hex}}</td>
+            <td></td>
+        </tr>
+        <tr class="numbers-table__summary-row info">
+            <td>AND</td>
+            <td class="numbers-table__summary-number">{{getNumbersAnd() | binary}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersAnd()}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersAnd() | hex}}</td>
+            <td></td>
+        </tr>
+        <tr class="numbers-table__summary-row info">
+            <td>OR</td>
+            <td class="numbers-table__summary-number">{{getNumbersOr() | binary}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersOr()}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersOr() | hex}}</td>
+            <td></td>
+        </tr>
+        <tr class="numbers-table__summary-row info">
+            <td>XOR</td>
+            <td class="numbers-table__summary-number">{{getNumbersXor() | binary}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersXor()}}</td>
+            <td class="numbers-table__summary-number">{{getNumbersXor() | hex}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <button type="button" class="btn btn-primary" ng-click="addNumber()">Add number</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+
