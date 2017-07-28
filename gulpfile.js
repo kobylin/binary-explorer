@@ -8,7 +8,7 @@ gulp.task('server', function () {
         root: ['bin'],
         port: 4242,
         livereload: true
-    })
+    });
 });
 
 gulp.task('reload', function () {
