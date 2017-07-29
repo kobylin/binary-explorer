@@ -37,8 +37,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['./src/css/**/*'], {base: './src'})
-        .pipe(gulp.dest('./bin'));
+    gulp.src(['./src/css/**/*.css', './src/components/**/*.css'])
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('./bin/css'));
 });
 
 gulp.task('watch', function () {

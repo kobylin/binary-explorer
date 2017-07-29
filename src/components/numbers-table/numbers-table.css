@@ -1,0 +1,28 @@
+.numbers-table {
+
+}
+
+.numbers-table__number-row {
+
+}
+
+.numbers-table__input {
+    text-align: right;
+}
+
+.numbers-table__summary-number {
+    text-align: right;
+    padding-right: 6px !important;
+}
+
+.numbers-table__button_cell {
+    min-width: 40px;
+}
+
+.numbers-table input[type="text"] {
+    width: 100%;
+}
+
+.numbers-table__binary-cell {
+    width: 355px;
+}
