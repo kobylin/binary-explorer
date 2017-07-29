@@ -9,7 +9,7 @@ app.directive('onlyNumber', function () {
                 hex: /[0-9a-f]/i
             };
             var validKeys = ['ArrowLeft', 'ArrowRight', 'Backspace', 'Delete'];
-            var type = $attrs.isNumber || 'int';
+            var type = $attrs.onlyNumber || 'int';
 
             ctrl.validateKey = function (e) {
                 var character = e.key;

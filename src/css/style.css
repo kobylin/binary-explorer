@@ -3,3 +3,17 @@
     margin: 0 auto;
     margin-top: 50px;
 }
+
+.header {
+
+}
+
+.header__title {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.header__content {
+    font-weight: bold;
+    font-size: 15px;
+}

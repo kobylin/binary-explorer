@@ -2,6 +2,10 @@
 
 }
 
+.numbers-table__table-head-cell {
+    text-align: center;
+}
+
 .numbers-table__number-row {
 
 }

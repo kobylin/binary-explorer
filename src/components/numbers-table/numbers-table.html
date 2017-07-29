@@ -1,10 +1,10 @@
 <div class="numbers-table">
     <table class="numbers-table__table table table-condensed table-hover">
-        <tr class="active">
+        <tr class="numbers-table__table-head active">
             <th>#</th>
-            <th>Binary</th>
-            <th>Decimal</th>
-            <th>Hex</th>
+            <th class="numbers-table__table-head-cell">Binary</th>
+            <th class="numbers-table__table-head-cell">Decimal</th>
+            <th class="numbers-table__table-head-cell">Hex</th>
             <th></th>
         </tr>
         <tr class="numbers-table__number-row" ng-repeat="number in numbers" multi-number="number">

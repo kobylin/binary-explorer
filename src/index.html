@@ -1,11 +1,11 @@
 <html ng-app="binaryExplorer">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <title>Numbers Explorer</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -14,11 +14,25 @@
 </head>
 
 <body>
-<div class="content">
-    <div class="table-responsive">
-        <numbers-table></numbers-table>
+    <div class="header content">
+        <h1 class="header__title">Numbers explorer</h1>
+        <div class="header__content">
+            <p>This tool allows you to convert numbers between different numbers base systems.</p>
+            <p>For example: you can convert integer to binary and hex.</p>
+            <p>And it shows you
+                <a href="https://en.wikipedia.org/wiki/Binary_number#Addition">addition (ADD)</a>,
+                AND,
+                OR,
+                XOR
+                operations result.</p>
+        </div>
     </div>
-</div>
+
+    <div class="content">
+        <div class="table-responsive">
+            <numbers-table></numbers-table>
+        </div>
+    </div>
 </body>
 
 </html>
