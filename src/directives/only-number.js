@@ -1,12 +1,17 @@
-app.directive('isInt', function () {
+app.directive('onlyNumber', function () {
     return {
         restrict: 'A',
-        controller: function ($element) {
+        controller: function ($element, $attrs) {
             var ctrl = this;
-            var validCharacterRegexp = /[0-9\-]/;
+            var validCharacterRegexp = {
+                int: /[0-9\-]/,
+                bin: /[01]/,
+                hex: /[0-9a-f]/i
+            };
             var validKeys = ['ArrowLeft', 'ArrowRight', 'Backspace', 'Delete'];
+            var type = $attrs.isNumber || 'int';
 
-            $element.on('keydown', function validateKey(e) {
+            ctrl.validateKey = function (e) {
                 var character = e.key;
 
                 if (!ctrl._validateCharacter(character)) {
@@ -15,10 +20,10 @@ app.directive('isInt', function () {
                 }
 
                 ctrl._handleMinus(character, e);
-            });
+            };
 
             ctrl._validateCharacter = function (character) {
-                var isValidCharacter = validCharacterRegexp.test(character);
+                var isValidCharacter = validCharacterRegexp[type].test(character);
                 var isValidKey = validKeys.indexOf(character) !== -1;
 
                 if (!isValidCharacter && !isValidKey) {
@@ -42,6 +47,8 @@ app.directive('isInt', function () {
 
                 e.preventDefault();
             }
+
+            $element.on('keydown', ctrl.validateKey);
         }
     }
 });

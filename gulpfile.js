@@ -7,7 +7,7 @@ gulp.task('server', function () {
     connect.server({
         root: ['bin'],
         port: 4242,
-        livereload: true
+        // livereload: true
     })
 });
 
@@ -43,7 +43,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./src/**/*', './src/bower_components/**/*.js'], ['build_dynamic', 'reload'])
+    gulp.watch(['./src/**/*', './src/bower_components/**/*.js'], ['build_dynamic'])
 });
 
 gulp.task('build_dynamic', ['js', 'html', 'css', 'lib']);
