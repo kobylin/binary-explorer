@@ -1,6 +1,15 @@
 binary-explorer
 ===============
 
-Interactive operations with binary numbers.
+Interactive operations with binary, decimal and hexadecimal numbers.
 
-Using AngularJS
+Installation:
+
+```
+npm install
+bower install
+```
+
+Start:
+
+`npm start`
