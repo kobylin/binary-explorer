@@ -28,12 +28,11 @@ app.service('$utils', function() {
             }
 
             if (intVal >= 0) {
-                // return intVal.toString(2);
                 return utils.padleft(intVal.toString(2), base, "0");
             }
 
             var tmp = (-intVal - 1).toString(2).replace(/[01]/g, function(d) {
-                return +!+d; // hehe: inverts each char
+                return +!+d; // inverts each char
             });
 
             return utils.padleft(tmp, base, "1");
@@ -45,7 +44,7 @@ app.service('$utils', function() {
             }
             if (binVal[0] === '1') {
                 var tmp = binVal.replace(/[01]/g, function(d) {
-                    return +!+d; // hehe: inverts each char
+                    return +!+d;
                 });
                 return -(parseInt(tmp, 2) + 1);
             }

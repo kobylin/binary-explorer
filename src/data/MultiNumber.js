@@ -11,30 +11,30 @@ app.service('$MultiNumber', function($utils) {
     }
 
     MultiNumber.prototype.fromDec = function(num) {
-        if (!this.isDec(num)) return false;
-
+        if (!this.isDec(num)) {
+            throw new Error('Number is not dec');
+        }
         this.dec = num;
         this.bin = $utils.getBinary(this.dec, 32);
         this.hex = Number(this.dec).toString(16);
-        return true;
     };
 
     MultiNumber.prototype.fromBin = function(num) {
-        if (!this.isBin(num)) return false;
-
+        if (!this.isBin(num)) {
+            throw new Error('Number is not bin');
+        }
         this.bin = num;
         this.dec = $utils.parseBinary(this.bin, 32);
         this.hex = Number(this.dec).toString(16);
-        return true;
     };
 
     MultiNumber.prototype.fromHex = function(num) {
-        if (!this.isHex(num)) return false;
-
+        if (!this.isHex(num)) {
+            throw new Error('Number is not hex');
+        }
         this.hex = num;
         this.dec = parseInt(this.hex, 16);
         this.bin = $utils.getBinary(this.dec, 32);
-        return true;
     };
 
     MultiNumber.prototype.isDec = function(num) {
@@ -46,7 +46,7 @@ app.service('$MultiNumber', function($utils) {
     };
 
     MultiNumber.prototype.isHex = function(num) {
-        return /^(0x)?[0-9a-f]+$/i.test(num);
+        return /^(-)?(0x)?[0-9a-f]+$/i.test(num);
     };
 
     return MultiNumber;
