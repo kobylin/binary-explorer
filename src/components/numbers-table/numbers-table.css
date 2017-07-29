@@ -1,5 +1,31 @@
 .numbers-table {
+    border: 1px solid #ddd;
+    border-top: none;
+}
 
+.numbers-table table {
+    margin-bottom: 0px;
+}
+
+.numbers-table__empty-row {
+    text-align: center;
+}
+
+.numbers-table__arrow-down {
+    font-size: 21px;
+    padding: 6px;
+}
+
+.numbers-table .numbers-table__index-cell {
+    vertical-align: middle;
+}
+
+.numbers-table__plus-sign {
+    font-size: 22px;
+    margin-right: 5px;
+
+    position: relative;
+    top: -1px;
 }
 
 .numbers-table__table-head-cell {
@@ -29,4 +55,32 @@
 
 .numbers-table__bin-cell {
     width: 355px;
+}
+
+.numbers-table__add-button {
+
+}
+
+.numbers-table__add-button > * {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.numbers-table__add-button:before {
+    display: inline-block;
+
+    height: 100%;
+
+    content: '';
+    vertical-align: middle;
+}
+
+.numbers-table__icon-remove {
+    padding: 1px 0 3px;
+}
+
+.numbers-table__add-button-contaner {
+    text-align: center;
+    padding: 10px;
 }

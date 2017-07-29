@@ -8,24 +8,26 @@
             <th></th>
         </tr>
         <tr class="numbers-table__number-row" ng-repeat="number in numbers" multi-number="number">
-            <td>
+            <td class="numbers-table__index-cell">
                 {{$index + 1}}
             </td>
             <td class="numbers-table__bin-cell">
-                <input class="numbers-table__input numbers-table__input_bin"
-                    type="text" ng-model="number.bin" only-number="bin"/>
+                <input class="numbers-table__input numbers-table__input_bin" type="text" ng-model="number.bin" only-number="bin" />
             </td>
             <td class="numbers-table__int-cell">
-                <input class="numbers-table__input"
-                    type="text" ng-model="number.dec" only-number="int"/>
+                <input class="numbers-table__input" type="text" ng-model="number.dec" only-number="int" />
             </td>
             <td class="numbers-table__hex-cell">
-                <input class="numbers-table__input"
-                    type="text" ng-model="number.hex" only-number="hex"/>
+                <input class="numbers-table__input" type="text" ng-model="number.hex" only-number="hex" />
             </td>
             <td class="numbers-table__button_cell">
-                <button type="button" ng-show="$index != 0" class="btn btn-danger btn-sm" ng-click="remove(number)">x</button>
+                <button type="button" ng-show="$index != 0" class="btn btn-danger btn-sm" ng-click="remove(number)">
+                    <span class="numbers-table__icon-remove glyphicon glyphicon-remove"></span>
+                </button>
             </td>
+        </tr>
+        <tr class="numbers-table__empty-row">
+            <td colspan="5"><span class="numbers-table__arrow-down  glyphicon glyphicon-arrow-down"></span></td>
         </tr>
         <tr class="numbers-table__summary-row info">
             <td>SUM</td>
@@ -56,10 +58,11 @@
             <td></td>
         </tr>
         <tr>
-            <td colspan="5">
-                <button type="button" class="btn btn-primary" ng-click="addNumber()">Add number</button>
+            <td class="numbers-table__add-button-contaner" colspan="5">
+                <button type="button" class="numbers-table__add-button btn btn-primary" ng-click="addNumber()">
+                    <span class="numbers-table__plus-sign glyphicon glyphicon-plus-sign"></span> Add number
+                </button>
             </td>
         </tr>
     </table>
-
 </div>
