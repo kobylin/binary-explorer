@@ -1,14 +1,20 @@
-var gulp = require('gulp');
-var connect = require('gulp-connect');
-var debug = require('gulp-debug');
-var concat = require('gulp-concat');
+const gulp = require('gulp');
+const connect = require('gulp-connect');
+const debug = require('gulp-debug');
+const concat = require('gulp-concat');
+const argv = require('yargs').argv;
+
+const livereload = argv.livereload === true;
+
+console.log('livereload', livereload);
 
 gulp.task('server', function () {
     connect.server({
         root: ['bin'],
         port: 4242,
         livereload: true
-    });
+        livereload: livereload
+    })
 });
 
 gulp.task('reload', function () {
@@ -37,12 +43,16 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['./src/css/**/*'], {base: './src'})
-        .pipe(gulp.dest('./bin'));
+    gulp.src(['./src/css/**/*.css', './src/components/**/*.css'])
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('./bin/css'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./src/**/*', './src/bower_components/**/*.js'], ['build_dynamic', 'reload'])
+    gulp.watch(
+        ['./src/**/*', './src/bower_components/**/*.js'],
+        livereload ? ['build_dynamic', 'reload']: ['build_dynamic']
+    )
 });
 
 gulp.task('build_dynamic', ['js', 'html', 'css', 'lib']);

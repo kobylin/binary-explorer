@@ -1,0 +1,7 @@
+.binary-operations a {
+    margin-right: 10px;
+}
+
+.binary-operations a:last-child {
+    margin-right: 0;
+}

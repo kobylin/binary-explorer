@@ -1,34 +1,23 @@
-.numbers-table {
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 1px;
+}
+
+
+
+.header {
 
 }
 
-.numbers-table__number-row {
-
+.header__title {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
-.numbers-table__input {
-    text-align: right;
-}
-
-.numbers-table__summary-number {
-    text-align: right;
-    padding-right: 6px !important;
-}
-
-.numbers-table__button_cell {
-    min-width: 40px;
-}
-
-.binary-field {
-    /*text-align: right;*/
-}
-
-td.binary-field {
-    padding-right: 7px !important;
-}
-
-.numbers-table input[type="text"] {
-    width: 100%;
+.header__content {
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .content {
@@ -37,14 +26,12 @@ td.binary-field {
     margin-top: 50px;
 }
 
-.binary-operations a {
-    margin-right: 10px;
-}
-
-.binary-operations a:last-child {
-    margin-right: 0;
-}
-
-.binary-cell {
-    width: 355px;
+.footer {
+    text-align: center;
+    border-top: 1px solid gray;
+    padding: 10px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

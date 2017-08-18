@@ -1,7 +1,4 @@
-- debug why not working properly "keydown"
-- split sum from input rows
-- restrict input
-    - make bin, int, hex validations: numbers, letters, max value
+- make bin, int, hex validations: numbers, letters, max value
 - show bin size
 - show Max allowed int
 - attach binary operations
